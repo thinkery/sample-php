@@ -13,7 +13,7 @@ class ThinkeryApi extends OAuth2Client {
 	}
 	public function getLoginUri($params = array()) {
 		return $this->getUri(
-			"http://thinkery.me/api/authorize.php",
+			"https://thinkery.me/api/authorize.php",
 			array_merge(array(
 				'response_type' => 'code',
 				'client_id' => $this->getVariable('client_id'),
@@ -24,7 +24,7 @@ class ThinkeryApi extends OAuth2Client {
 
 	public function getLogoutUri($params = array()) {
 		return $this->getUri(
-			"http://thinkery.me/logout.php",
+			"https://thinkery.me/logout.php",
 			array_merge(array(
 				'oauth_token' => $this->getAccessToken(),
 				'redirect_uri' => $this->getCurrentUri(),
